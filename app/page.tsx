@@ -9,7 +9,6 @@ import HeroSection from '@/components/HeroSection';
 import EventCardsSection from '@/components/EventCardsSection';
 import TimelineSection from '@/components/TimelineSection';
 import LocationExperience from '@/components/LocationExperience';
-import DressCodeSection from '@/components/DressCodeSection';
 import BlessingsWall from '@/components/BlessingsWall';
 import LuxuryFooter from '@/components/LuxuryFooter';
 import RsvpModal from '@/components/RsvpModal';
@@ -53,9 +52,6 @@ export default function Home() {
 
           {/* Venue & Maps Section */}
           <LocationExperience />
-
-          {/* Style & Dress Code Section */}
-          <DressCodeSection />
 
           {/* Blessings Wall */}
           <BlessingsWall />

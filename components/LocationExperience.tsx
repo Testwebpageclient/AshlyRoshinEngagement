@@ -28,7 +28,7 @@ export default function LocationExperience() {
       address: "St. Joseph's Church Road",
       city: 'Amalapuram',
       description: 'A historic and revered sanctuary surrounded by serene greenery, offering a sacred ambiance for Ashly & Roshin’s engagement ceremony.',
-      highlights: ['Sacred Prayer Hall', 'Spacious Church Grounds', 'Dedicated Guest Parking'],
+      highlights: [],
       googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=St.+Joseph's+Church+Amalapuram",
       appleMapsUrl: "https://maps.apple.com/?q=St.+Joseph's+Church+Amalapuram",
       embedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15783.123456789!2d76.54321!3d10.12345!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTDCsDA3JzM0LjQiTiA3NsKwMzInMzUuNiJF!5e0!3m2!1sen!2sin!4v1600000000000!5m2!1sen!2sin",

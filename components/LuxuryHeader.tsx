@@ -32,7 +32,6 @@ export default function LuxuryHeader({ onOpenRsvp, onOpenShare }: HeaderProps) {
     { name: 'Ceremony', href: '#details' },
     { name: 'Timeline', href: '#timeline' },
     { name: 'Venues', href: '#venues' },
-    { name: 'Dress Code', href: '#dresscode' },
     { name: 'Blessings', href: '#blessings' },
   ];
 

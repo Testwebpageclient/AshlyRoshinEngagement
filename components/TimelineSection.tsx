@@ -23,17 +23,10 @@ export default function TimelineSection() {
     },
     {
       time: '6:00 PM',
-      title: 'Grand Evening Reception',
+      title: 'Grand Evening Reception & Feast',
       location: 'Mangalath Resorts, Malayattoor',
-      description: 'A royal welcome at the scenic riverside resort with refreshments & music.',
+      description: 'A warm welcome at the scenic resort with traditional celebratory feast, music, and toasts.',
       icon: <GlassWater className="w-5 h-5 text-[#AA771C]" />,
-    },
-    {
-      time: '7:30 PM',
-      title: 'Feast, Toast & Musical Evening',
-      location: 'Mangalath Resorts Grand Banquet',
-      description: 'Exquisite traditional feast, heartfelt toasts, and celebratory melodies.',
-      icon: <Music className="w-5 h-5 text-[#AA771C]" />,
     },
   ];
 

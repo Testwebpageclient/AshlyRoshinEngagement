@@ -1,17 +1,17 @@
-// Web Audio API ambient harp & piano chord synthesizer for luxury experience
+// Web Audio API ambient celebratory harp, piano & string pad synthesizer for luxury engagement experience
 
 let audioCtx: AudioContext | null = null;
 let isPlaying = false;
 let masterGain: GainNode | null = null;
 let intervalId: any = null;
 
-// Frequencies for soothing luxury Pentatonic / Lydian chord progression in C major / G major
-// Fmaj7 - Cmaj7 - Am9 - Em7
+// Rich romantic celebratory Lydian & Major chord progression
+// Cmaj9 -> Fmaj9 -> Am9 -> Gsus4/G
 const chordProgressions = [
-  [174.61, 220.00, 261.63, 329.63, 392.00], // Fmaj9
-  [130.81, 164.81, 196.00, 246.94, 293.66], // Cmaj9
-  [220.00, 261.63, 329.63, 392.00, 493.88], // Am9
-  [164.81, 196.00, 246.94, 293.66, 392.00], // Em7
+  { bass: 130.81, notes: [261.63, 329.63, 392.00, 493.88, 587.33] }, // Cmaj9
+  { bass: 174.61, notes: [261.63, 349.23, 392.00, 523.25, 659.25] }, // Fmaj9
+  { bass: 220.00, notes: [329.63, 392.00, 493.88, 523.25, 659.25] }, // Am9
+  { bass: 196.00, notes: [293.66, 392.00, 440.00, 587.33, 659.25] }, // Gsus4/G
 ];
 
 function getAudioContext(): AudioContext {
@@ -30,12 +30,41 @@ export function initAudio() {
     const ctx = getAudioContext();
     if (!masterGain) {
       masterGain = ctx.createGain();
-      masterGain.gain.setValueAtTime(0.2, ctx.currentTime);
+      masterGain.gain.setValueAtTime(0.25, ctx.currentTime);
       masterGain.connect(ctx.destination);
     }
   } catch (e) {
     console.warn('Web Audio Context initialization error:', e);
   }
+}
+
+export function playWarmPad(freq: number, duration = 3.5, volume = 0.08) {
+  try {
+    const ctx = getAudioContext();
+    if (!masterGain) initAudio();
+
+    const osc = ctx.createOscillator();
+    const noteGain = ctx.createGain();
+    const filter = ctx.createBiquadFilter();
+
+    osc.type = 'sine';
+    osc.frequency.setValueAtTime(freq / 2, ctx.currentTime); // Low octave warmth
+
+    filter.type = 'lowpass';
+    filter.frequency.setValueAtTime(350, ctx.currentTime);
+
+    const now = ctx.currentTime;
+    noteGain.gain.setValueAtTime(0.001, now);
+    noteGain.gain.linearRampToValueAtTime(volume, now + 0.8);
+    noteGain.gain.exponentialRampToValueAtTime(0.0001, now + duration);
+
+    osc.connect(filter);
+    filter.connect(noteGain);
+    if (masterGain) noteGain.connect(masterGain);
+
+    osc.start(now);
+    osc.stop(now + duration);
+  } catch (e) {}
 }
 
 export function playHarpPluck(freq: number, delay = 0, volume = 0.15) {
@@ -47,30 +76,25 @@ export function playHarpPluck(freq: number, delay = 0, volume = 0.15) {
     const noteGain = ctx.createGain();
     const filter = ctx.createBiquadFilter();
 
-    // Harp / Piano warm timbre mix
     osc.type = 'triangle';
     osc.frequency.setValueAtTime(freq, ctx.currentTime + delay);
 
-    // Warm low-pass filter
     filter.type = 'lowpass';
-    filter.frequency.setValueAtTime(1200, ctx.currentTime + delay);
-    filter.Q.setValueAtTime(1.5, ctx.currentTime + delay);
+    filter.frequency.setValueAtTime(1400, ctx.currentTime + delay);
+    filter.Q.setValueAtTime(1.8, ctx.currentTime + delay);
 
-    // Envelope: quick attack, smooth exponential decay
     const now = ctx.currentTime + delay;
     noteGain.gain.setValueAtTime(0.001, now);
-    noteGain.gain.linearRampToValueAtTime(volume, now + 0.04);
-    noteGain.gain.exponentialRampToValueAtTime(0.0001, now + 2.5);
+    noteGain.gain.linearRampToValueAtTime(volume, now + 0.03);
+    noteGain.gain.exponentialRampToValueAtTime(0.0001, now + 2.8);
 
     osc.connect(filter);
     filter.connect(noteGain);
     if (masterGain) noteGain.connect(masterGain);
 
     osc.start(now);
-    osc.stop(now + 2.6);
-  } catch (e) {
-    // Ignore audio autoplay restrictions gracefully
-  }
+    osc.stop(now + 2.9);
+  } catch (e) {}
 }
 
 export function startAmbientMusic() {
@@ -80,21 +104,24 @@ export function startAmbientMusic() {
 
   let step = 0;
 
-  const playNextArpeggio = () => {
+  const playNextPhrase = () => {
     if (!isPlaying) return;
     const chord = chordProgressions[step % chordProgressions.length];
     
-    // Play arpeggiated harp notes
-    chord.forEach((freq, idx) => {
-      const arpeggioDelay = idx * 0.18 + Math.random() * 0.05;
-      playHarpPluck(freq, arpeggioDelay, 0.12 - idx * 0.015);
+    // Play warm bass pad note
+    playWarmPad(chord.bass, 3.8, 0.09);
+
+    // Play arpeggiated harp/piano melody
+    chord.notes.forEach((freq, idx) => {
+      const arpeggioDelay = idx * 0.22 + Math.random() * 0.04;
+      playHarpPluck(freq, arpeggioDelay, 0.14 - idx * 0.012);
     });
 
     step++;
   };
 
-  playNextArpeggio();
-  intervalId = setInterval(playNextArpeggio, 3600);
+  playNextPhrase();
+  intervalId = setInterval(playNextPhrase, 3200);
 }
 
 export function stopAmbientMusic() {
