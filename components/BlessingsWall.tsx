@@ -148,7 +148,7 @@ export default function BlessingsWall() {
                     exit={{ opacity: 0 }}
                     className="text-xs font-sans-clean font-semibold text-green-700 flex items-center gap-1"
                   >
-                    ✦ Thank you! Your blessing has been posted on the wall.
+                    ✦ Thank you! Your blessing has been sent to Ashly & Roshin.
                   </motion.span>
                 )}
               </AnimatePresence>
@@ -159,40 +159,11 @@ export default function BlessingsWall() {
                 className="ml-auto px-6 py-3 rounded-full bg-[#778873] text-[#FDF6ED] font-sans-clean text-xs font-semibold tracking-wider uppercase hover:bg-[#5A6C56] transition-all duration-300 flex items-center gap-2 shadow-md hover:shadow-lg disabled:opacity-50"
               >
                 <Send className="w-4 h-4 text-[#E6CA65]" />
-                <span>{isSubmitting ? 'Posting...' : 'Post Blessing'}</span>
+                <span>{isSubmitting ? 'Sending...' : 'Send Blessing'}</span>
               </button>
             </div>
           </form>
         </motion.div>
-
-        {/* Wishes Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <AnimatePresence>
-            {blessings.map((b) => (
-              <motion.div
-                key={b.id}
-                initial={{ opacity: 0, scale: 0.95, y: 20 }}
-                animate={{ opacity: 1, scale: 1, y: 0 }}
-                exit={{ opacity: 0, scale: 0.9 }}
-                transition={{ duration: 0.5 }}
-                className="p-6 rounded-2xl bg-linen-card embossed-card border border-[#DCCFC0] flex flex-col justify-between"
-              >
-                <p className="font-serif-luxury text-base sm:text-lg text-[#778873] italic mb-4">
-                  &ldquo;{b.message}&rdquo;
-                </p>
-
-                <div className="flex items-center justify-between border-t border-[#DCCFC0]/40 pt-3">
-                  <span className="font-sans-clean text-xs font-bold text-[#AA771C]">
-                    {b.name}
-                  </span>
-                  <span className="font-sans-clean text-[11px] text-[#778873]/70">
-                    {b.date}
-                  </span>
-                </div>
-              </motion.div>
-            ))}
-          </AnimatePresence>
-        </div>
       </div>
     </section>
   );

@@ -70,7 +70,7 @@ export default function HeroSection() {
         </div>
 
         <p className="font-serif-luxury text-lg sm:text-xl text-[#778873] italic tracking-wide mb-2">
-          Together with their families
+          Together with our families
         </p>
       </motion.div>
 

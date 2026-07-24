@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { motion } from 'motion/react';
-import { Sparkles, Church, GlassWater, Music, Heart } from 'lucide-react';
+import { Sparkles, Church, GlassWater, Music } from 'lucide-react';
 
 interface TimelineStep {
   time: string;
@@ -20,13 +20,6 @@ export default function TimelineSection() {
       location: "St. Joseph's Church, Amalapuram",
       description: 'The holy prayer, exchange of intentions, and formal engagement blessing.',
       icon: <Church className="w-5 h-5 text-[#AA771C]" />,
-    },
-    {
-      time: '5:15 PM',
-      title: 'Ring Exchange & Photos',
-      location: "St. Joseph's Church Grounds",
-      description: 'Sealing the promise with golden rings and capturing cherished family memories.',
-      icon: <Heart className="w-5 h-5 text-[#AA771C] fill-[#D4AF37]/30" />,
     },
     {
       time: '6:00 PM',

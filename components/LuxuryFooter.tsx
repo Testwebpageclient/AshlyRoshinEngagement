@@ -41,8 +41,11 @@ export default function LuxuryFooter({ onReopenBox }: FooterProps) {
 
         <div className="w-24 h-[1px] bg-gradient-to-r from-transparent via-[#D4AF37] to-transparent my-2" />
 
-        <p className="font-sans-clean text-[11px] text-[#778873]/60 tracking-wider">
-          Handcrafted Luxury Engagement Digital Experience © 2026
+        <p className="font-sans-clean text-xs text-[#778873]/70 tracking-wider flex items-center justify-center gap-1.5">
+          <span>Build and developed by</span>
+          <span className="font-script text-2xl font-bold text-[#AA771C] inline-block -mt-1 hover:scale-110 transition-transform">
+            AS
+          </span>
         </p>
       </div>
     </footer>

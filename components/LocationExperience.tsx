@@ -39,8 +39,8 @@ export default function LocationExperience() {
       type: 'Reception Venue',
       address: 'Riverside Road, Near Periyar',
       city: 'Malayattoor',
-      description: 'An idyllic resort framed by gentle waters and lush palms, hosting the grand celebratory feast, music, and royal evening reception.',
-      highlights: ['Scenic Periyar River Views', 'Air-Conditioned Grand Banquet', 'Luxury Lawns & Outdoor Lounges'],
+      description: 'An idyllic resort framed by gentle waters and lush palms, hosting the grand celebratory feast, music, and evening reception.',
+      highlights: [],
       googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Mangalath+Resorts+Malayattoor",
       appleMapsUrl: "https://maps.apple.com/?q=Mangalath+Resorts+Malayattoor",
       embedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15780.123456789!2d76.58901!3d10.18901!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTDCsDExJzIwLjQiTiA3NsKwMzUnMjA.0IkE!5e0!3m2!1sen!2sin!4v1600000000000!5m2!1sen!2sin",
@@ -109,16 +109,18 @@ export default function LocationExperience() {
                 </p>
 
                 {/* Venue Highlights Chips */}
-                <div className="flex flex-wrap gap-2 mb-6">
-                  {venue.highlights.map((h) => (
-                    <span
-                      key={h}
-                      className="px-3 py-1 rounded-lg bg-[#FDF6ED] border border-[#DCCFC0]/60 text-[11px] font-sans-clean text-[#778873]"
-                    >
-                      ✦ {h}
-                    </span>
-                  ))}
-                </div>
+                {venue.highlights.length > 0 && (
+                  <div className="flex flex-wrap gap-2 mb-6">
+                    {venue.highlights.map((h) => (
+                      <span
+                        key={h}
+                        className="px-3 py-1 rounded-lg bg-[#FDF6ED] border border-[#DCCFC0]/60 text-[11px] font-sans-clean text-[#778873]"
+                      >
+                        ✦ {h}
+                      </span>
+                    ))}
+                  </div>
+                )}
 
                 {/* Address Box */}
                 <div className="p-4 rounded-xl bg-[#FDF6ED] border border-[#DCCFC0] flex items-center justify-between gap-3">

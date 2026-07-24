@@ -738,7 +738,7 @@ export default function ThreeKeepsakeBox({ onOpened }: KeepsakeBoxProps) {
         className="absolute top-10 text-center z-20 px-4"
       >
         <p className="font-display text-xs tracking-[0.3em] uppercase text-[#AA771C] mb-1">
-          Exclusive Royal Invitation
+          Invitation
         </p>
         <h1 className="font-serif-luxury text-2xl sm:text-3xl text-[#778873] tracking-widest font-semibold">
           Ashly & Roshin

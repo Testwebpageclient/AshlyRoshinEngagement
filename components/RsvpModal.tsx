@@ -70,7 +70,7 @@ export default function RsvpModal({ isOpen, onClose }: RsvpModalProps) {
           <div className="flex items-center gap-2">
             <Sparkles className="w-4 h-4 text-[#E6CA65]" />
             <span className="font-display text-xs font-bold tracking-[0.25em] uppercase">
-              Royal RSVP Confirmation
+              RSVP Confirmation
             </span>
           </div>
           <button
@@ -195,7 +195,7 @@ export default function RsvpModal({ isOpen, onClose }: RsvpModalProps) {
                 disabled={isSubmitting}
                 className="w-full py-3.5 rounded-full bg-gradient-to-r from-[#D4AF37] via-[#AA771C] to-[#D4AF37] text-[#FDF6ED] font-sans-clean text-xs font-bold tracking-[0.2em] uppercase shadow-lg hover:brightness-110 transition-all duration-300"
               >
-                {isSubmitting ? 'Confirming Royal RSVP...' : 'Submit RSVP Confirmation'}
+                {isSubmitting ? 'Confirming RSVP...' : 'Submit RSVP Confirmation'}
               </button>
             </form>
           ) : (

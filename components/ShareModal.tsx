@@ -15,7 +15,7 @@ export default function ShareModal({ isOpen, onClose }: ShareModalProps) {
   if (!isOpen) return null;
 
   const shareUrl = typeof window !== 'undefined' ? window.location.href : 'https://ashly-roshin-engagement.com';
-  const shareText = `You are cordially invited to celebrate the Engagement Ceremony of Ashly & Roshin on August 15, 2026. Explore the royal digital invitation: ${shareUrl}`;
+  const shareText = `You are cordially invited to celebrate the Engagement Ceremony of Ashly & Roshin on August 15, 2026. Explore the digital invitation: ${shareUrl}`;
 
   const handleCopy = () => {
     navigator.clipboard.writeText(shareUrl);
@@ -62,7 +62,7 @@ export default function ShareModal({ isOpen, onClose }: ShareModalProps) {
         </div>
 
         <h3 className="font-serif-luxury text-2xl text-[#778873] font-semibold mb-1">
-          Share Royal Invitation
+          Share Invitation
         </h3>
         <p className="font-serif-luxury text-sm text-[#778873]/80 italic mb-6">
           Pass along the joyous news to family & friends
