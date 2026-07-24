@@ -1,0 +1,137 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-primary: #FDF6ED;
+    --bg-secondary: #DCCFC0;
+    --accent-green: #A1BC98;
+    --dark-accent: #778873;
+    --gold-primary: #D4AF37;
+    --gold-light: #F3E5AB;
+    --gold-dark: #AA771C;
+  }
+
+  body {
+    background-color: #FDF6ED;
+    color: #4A5548;
+    font-family: var(--font-body, 'Plus Jakarta Sans', sans-serif);
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    selection-background-color: #A1BC98;
+    selection-color: #FDF6ED;
+  }
+}
+
+/* Custom Typography Utility Classes */
+.font-serif-luxury {
+  font-family: 'Cormorant Garamond', 'Playfair Display', serif;
+}
+
+.font-display {
+  font-family: 'Cinzel', 'Cormorant Garamond', serif;
+}
+
+.font-script {
+  font-family: 'Pinyon Script', 'Alex Brush', cursive;
+}
+
+.font-sans-clean {
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+}
+
+/* Gold Foil & Luxury Text Gradient */
+.gold-text-gradient {
+  background: linear-gradient(135deg, #B8860B 0%, #E6CA65 25%, #AA771C 50%, #F3E5AB 75%, #996515 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% auto;
+  animation: goldShimmer 6s linear infinite;
+}
+
+.gold-border-gradient {
+  border-image: linear-gradient(135deg, #D4AF37, #A1BC98, #D4AF37) 1;
+}
+
+/* Handmade Paper & Card Background Noise Texture */
+.bg-luxury-paper {
+  background-color: #FDF6ED;
+  background-image: 
+    radial-gradient(at 10% 10%, rgba(220, 207, 192, 0.25) 0px, transparent 50%),
+    radial-gradient(at 90% 90%, rgba(161, 188, 152, 0.15) 0px, transparent 50%),
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.03'/%3E%3C/svg%3E");
+}
+
+.bg-linen-card {
+  background-color: rgba(253, 246, 237, 0.85);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(220, 207, 192, 0.6);
+  box-shadow: 
+    0 10px 30px -10px rgba(119, 136, 115, 0.12),
+    0 0 0 1px rgba(255, 255, 255, 0.6) inset;
+}
+
+.bg-gold-glass {
+  background: linear-gradient(135deg, rgba(253, 246, 237, 0.95), rgba(220, 207, 192, 0.7));
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  box-shadow: 0 15px 35px rgba(119, 136, 115, 0.15);
+}
+
+/* Embossed Border & Wax Seal Effects */
+.embossed-card {
+  box-shadow: 
+    inset 2px 2px 5px rgba(255, 255, 255, 0.9),
+    inset -2px -2px 5px rgba(119, 136, 115, 0.15),
+    0 20px 40px -15px rgba(119, 136, 115, 0.18);
+}
+
+.gold-wax-seal {
+  background: radial-gradient(circle at 30% 30%, #F5D77F, #C5A059 60%, #8A6828);
+  box-shadow: 
+    0 4px 15px rgba(138, 104, 40, 0.4),
+    inset 0 2px 3px rgba(255, 255, 255, 0.5),
+    inset 0 -2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Custom Keyframe Animations */
+@keyframes goldShimmer {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes floatGentle {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-8px) rotate(1deg); }
+}
+
+@keyframes pulseSoft {
+  0%, 100% { transform: scale(1); opacity: 0.8; }
+  50% { transform: scale(1.05); opacity: 1; }
+}
+
+.animate-float-gentle {
+  animation: floatGentle 6s ease-in-out infinite;
+}
+
+.animate-pulse-soft {
+  animation: pulseSoft 3s ease-in-out infinite;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #FDF6ED;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #DCCFC0;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #A1BC98;
+}

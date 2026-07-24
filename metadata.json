@@ -1,0 +1,6 @@
+{
+  "name": "Ashly & Roshin Engagement Invitation",
+  "description": "An ultra-luxury cinematic digital engagement invitation experience for Ashly & Roshin.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
