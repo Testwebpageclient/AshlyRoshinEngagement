@@ -5,7 +5,6 @@ import { motion, AnimatePresence } from 'motion/react';
 import { X, CheckCircle, Sparkles, Calendar, Download, Heart, Users, Check } from 'lucide-react';
 import confetti from 'canvas-confetti';
 import { downloadIcsFile } from '@/lib/calendar';
-import { playSealChime } from '@/lib/audio';
 
 interface RsvpModalProps {
   isOpen: boolean;
@@ -41,8 +40,6 @@ export default function RsvpModal({ isOpen, onClose }: RsvpModalProps) {
       };
       const existing = JSON.parse(localStorage.getItem('ashly_roshin_rsvps') || '[]');
       localStorage.setItem('ashly_roshin_rsvps', JSON.stringify([rsvpData, ...existing]));
-
-      playSealChime();
 
       // Launch golden confetti celebration
       confetti({

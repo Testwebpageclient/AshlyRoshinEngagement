@@ -4,7 +4,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import * as THREE from 'three';
 import { motion, AnimatePresence } from 'motion/react';
 import { Sparkles, Heart, Music, Volume2, VolumeX, ArrowDown } from 'lucide-react';
-import { playBoxOpenChime, startAmbientMusic } from '@/lib/audio';
+import { startAmbientMusic } from '@/lib/audio';
 
 interface KeepsakeBoxProps {
   onOpened: () => void;
@@ -558,7 +558,6 @@ export default function ThreeKeepsakeBox({ onOpened }: KeepsakeBoxProps) {
 
     if (soundEnabled) {
       startAmbientMusic();
-      playBoxOpenChime();
     }
 
     const startTime = performance.now();
