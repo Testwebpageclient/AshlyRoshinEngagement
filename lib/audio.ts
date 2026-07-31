@@ -1,4 +1,6 @@
-const ambientMusicUrl = '/audioone.mp3?v=2';
+import ambientMusicAsset from './Audioone.mp3';
+
+const ambientMusicUrl = ambientMusicAsset;
 
 let isPlaying = false;
 let ambientMusicElement: HTMLAudioElement | null = null;
