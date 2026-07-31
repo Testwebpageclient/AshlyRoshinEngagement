@@ -1,9 +1,10 @@
 // Web Audio API ambient celebratory harp, piano & string pad synthesizer for luxury engagement experience
+const ambientMusicUrl = '/audioone.mp3';
 
 let audioCtx: AudioContext | null = null;
 let isPlaying = false;
 let masterGain: GainNode | null = null;
-let intervalId: any = null;
+let ambientMusicElement: HTMLAudioElement | null = null;
 
 // Rich romantic celebratory Lydian & Major chord progression
 // Cmaj9 -> Fmaj9 -> Am9 -> Gsus4/G
@@ -97,38 +98,41 @@ export function playHarpPluck(freq: number, delay = 0, volume = 0.15) {
   } catch (e) {}
 }
 
+function getAmbientMusicElement(): HTMLAudioElement | null {
+  if (typeof window === 'undefined') return null;
+
+  if (!ambientMusicElement) {
+    ambientMusicElement = new Audio(ambientMusicUrl);
+    ambientMusicElement.loop = true;
+    ambientMusicElement.volume = 0.5;
+  }
+
+  return ambientMusicElement;
+}
+
 export function startAmbientMusic() {
   initAudio();
   if (isPlaying) return;
+
   isPlaying = true;
+  const audio = getAmbientMusicElement();
 
-  let step = 0;
+  if (!audio) return;
 
-  const playNextPhrase = () => {
-    if (!isPlaying) return;
-    const chord = chordProgressions[step % chordProgressions.length];
-    
-    // Play warm bass pad note
-    playWarmPad(chord.bass, 3.8, 0.09);
-
-    // Play arpeggiated harp/piano melody
-    chord.notes.forEach((freq, idx) => {
-      const arpeggioDelay = idx * 0.22 + Math.random() * 0.04;
-      playHarpPluck(freq, arpeggioDelay, 0.14 - idx * 0.012);
-    });
-
-    step++;
-  };
-
-  playNextPhrase();
-  intervalId = setInterval(playNextPhrase, 3200);
+  audio.currentTime = 0;
+  audio.play().catch(() => {
+    isPlaying = false;
+    console.warn('Ambient music playback failed');
+  });
 }
 
 export function stopAmbientMusic() {
   isPlaying = false;
-  if (intervalId) {
-    clearInterval(intervalId);
-    intervalId = null;
+
+  const audio = ambientMusicElement;
+  if (audio) {
+    audio.pause();
+    audio.currentTime = 0;
   }
 }
 
