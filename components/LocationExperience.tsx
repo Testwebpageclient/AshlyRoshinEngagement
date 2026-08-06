@@ -35,14 +35,14 @@ export default function LocationExperience() {
     },
     {
       id: 'resort',
-      name: 'Mangalath Resorts',
+      name: 'Bosco Parish Hall, Vyakulamatha Church Kaippattor',
       type: 'Reception Venue',
-      address: 'Riverside Road, Near Periyar',
-      city: 'Malayattoor',
-      description: 'An idyllic resort framed by gentle waters and lush palms, hosting the grand celebratory feast, music, and evening reception.',
+      address: 'Vyakulamatha Church Road',
+      city: 'Kaippattor',
+      description: 'A warm and welcoming parish hall setting for the grand celebratory feast, music, and evening reception.',
       highlights: [],
-      googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Mangalath+Resorts+Malayattoor",
-      appleMapsUrl: "https://maps.apple.com/?q=Mangalath+Resorts+Malayattoor",
+      googleMapsUrl: "https://maps.app.goo.gl/prt5WrV4GTVEx6pT6",
+      appleMapsUrl: "https://maps.app.goo.gl/prt5WrV4GTVEx6pT6",
       embedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15780.123456789!2d76.58901!3d10.18901!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTDCsDExJzIwLjQiTiA3NsKwMzUnMjA.0IkE!5e0!3m2!1sen!2sin!4v1600000000000!5m2!1sen!2sin",
     },
   ];
@@ -162,20 +162,20 @@ export default function LocationExperience() {
                   href={venue.googleMapsUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-5 py-2.5 rounded-full bg-[#778873] text-[#FDF6ED] font-sans-clean text-xs font-semibold tracking-wider uppercase hover:bg-[#5A6C56] transition-all duration-300 flex items-center gap-2 shadow-sm"
+                  className="min-w-[140px] flex-1 sm:flex-none px-5 py-2.5 rounded-full bg-[#778873] text-[#FDF6ED] font-sans-clean text-xs font-semibold tracking-wider uppercase hover:bg-[#5A6C56] transition-all duration-300 flex items-center justify-center gap-2 shadow-sm"
                 >
                   <Navigation className="w-3.5 h-3.5 text-[#E6CA65]" />
-                  <span>Google Maps</span>
+                  <span>Open Directions</span>
                 </a>
 
                 <a
                   href={venue.appleMapsUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-5 py-2.5 rounded-full bg-[#FDF6ED] border border-[#D4AF37]/50 text-[#AA771C] font-sans-clean text-xs font-semibold tracking-wider uppercase hover:bg-[#D4AF37] hover:text-[#FDF6ED] transition-all duration-300 flex items-center gap-2 shadow-sm"
+                  className="min-w-[140px] flex-1 sm:flex-none px-5 py-2.5 rounded-full bg-[#FDF6ED] border border-[#D4AF37]/50 text-[#AA771C] font-sans-clean text-xs font-semibold tracking-wider uppercase hover:bg-[#D4AF37] hover:text-[#FDF6ED] transition-all duration-300 flex items-center justify-center gap-2 shadow-sm"
                 >
                   <ExternalLink className="w-3.5 h-3.5" />
-                  <span>Apple Maps</span>
+                  <span>Open in Maps</span>
                 </a>
               </div>
             </motion.div>

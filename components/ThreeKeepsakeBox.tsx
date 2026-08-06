@@ -435,7 +435,7 @@ export default function ThreeKeepsakeBox({ onOpened }: KeepsakeBoxProps) {
       cCtx.font = '400 20px "Plus Jakarta Sans", sans-serif';
       cCtx.fillStyle = '#778873';
       cCtx.fillText('15 AUGUST 2026', 256, 380);
-      cCtx.fillText('ST. JOSEPH\'S CHURCH & MANGALATH RESORTS', 256, 420);
+      cCtx.fillText('ST. JOSEPH\'S CHURCH & BOSCO PARISH HALL, VYAKULAMATHA CHURCH KAIPPATTOR', 256, 420);
 
       cCtx.font = 'italic 22px "Cormorant Garamond", serif';
       cCtx.fillText('Tap to enter experience', 256, 560);

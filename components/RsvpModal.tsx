@@ -128,7 +128,7 @@ export default function RsvpModal({ isOpen, onClose }: RsvpModalProps) {
                   {[
                     { id: 'both', label: 'Joyfully Attending Both Ceremony & Reception' },
                     { id: 'ceremony', label: 'Attending Ceremony Only (St. Joseph Church)' },
-                    { id: 'reception', label: 'Attending Reception Only (Mangalath Resorts)' },
+                    { id: 'reception', label: 'Attending Reception Only (Bosco Parish Hall, Vyakulamatha Church Kaippattor)' },
                     { id: 'declined', label: 'Regretfully Unable To Attend' },
                   ].map((opt) => (
                     <label

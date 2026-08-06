@@ -142,8 +142,8 @@ export default function EventCardsSection() {
                 <div className="flex items-start gap-3 pt-1">
                   <MapPin className="w-4 h-4 text-[#D4AF37] shrink-0 mt-1" />
                   <div>
-                    <span className="font-semibold block text-[#778873]">Mangalath Resorts</span>
-                    <span className="text-xs text-[#778873]/80">Malayattoor</span>
+                    <span className="font-semibold block text-[#778873]">Bosco Parish Hall, Vyakulamatha Church Kaippattor</span>
+                    <span className="text-xs text-[#778873]/80">Kaippattor</span>
                   </div>
                 </div>
               </div>
@@ -152,7 +152,7 @@ export default function EventCardsSection() {
             {/* Action Buttons */}
             <div className="mt-8 pt-6 border-t border-[#DCCFC0]/60 flex items-center justify-between">
               <a
-                href="https://maps.google.com/?q=Mangalath+Resorts,+Malayattoor"
+                href="https://maps.app.goo.gl/prt5WrV4GTVEx6pT6"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-5 py-2.5 rounded-full bg-[#FAF3E0] border border-[#D4AF37]/50 text-[#AA771C] font-sans-clean text-xs font-semibold tracking-wider uppercase hover:bg-[#D4AF37] hover:text-[#FDF6ED] transition-all duration-300 flex items-center gap-2 shadow-sm"

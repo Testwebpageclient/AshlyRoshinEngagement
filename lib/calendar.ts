@@ -10,8 +10,8 @@ export interface EventDetails {
 
 export const ENGAGEMENT_EVENT: EventDetails = {
   title: "Ashly & Roshin Engagement Ceremony & Reception",
-  description: "Join us in celebrating the Engagement of Ashly & Roshin.\\n\\nCeremony: 4:00 PM at St. Joseph's Church, Amalapuram.\\nReception: 6:00 PM at Mangalath Resorts, Malayattoor.",
-  location: "St. Joseph's Church, Amalapuram & Mangalath Resorts, Malayattoor",
+  description: "Join us in celebrating the Engagement of Ashly & Roshin.\\n\\nCeremony: 4:00 PM at St. Joseph's Church, Amalapuram.\\nReception: 6:00 PM at Bosco Parish Hall, Vyakulamatha Church Kaippattor.",
+  location: "St. Joseph's Church, Amalapuram & Bosco Parish Hall, Vyakulamatha Church Kaippattor",
   startDate: "20260815T160000",
   endDate: "20260815T220000",
 };

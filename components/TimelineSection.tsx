@@ -24,8 +24,8 @@ export default function TimelineSection() {
     {
       time: '6:00 PM',
       title: 'Grand Evening Reception & Feast',
-      location: 'Mangalath Resorts, Malayattoor',
-      description: 'A warm welcome at the scenic resort with traditional celebratory feast, music, and toasts.',
+      location: 'Bosco Parish Hall, Vyakulamatha Church Kaippattor',
+      description: 'A warm welcome at the parish hall with traditional celebratory feast, music, and toasts.',
       icon: <GlassWater className="w-5 h-5 text-[#AA771C]" />,
     },
   ];
