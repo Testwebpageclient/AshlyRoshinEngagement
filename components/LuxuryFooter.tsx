@@ -22,7 +22,7 @@ export default function LuxuryFooter({ onReopenBox }: FooterProps) {
             Ashly & Roshin
           </h2>
           <p className="font-display text-xs tracking-[0.3em] uppercase text-[#AA771C] font-semibold">
-            15 August 2026 • Amalapuram & Malayattoor
+            15 August 2026
           </p>
         </div>
 
